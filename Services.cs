@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Net_Dsa_Lab
 {
@@ -26,8 +21,7 @@ namespace Net_Dsa_Lab
                 }
                 else
                 {
-                    // Mesaj de eroare daca utilizatorul introduce text sau un numar prea mare
-                    Console.WriteLine("❌ Intrare invalida. Te rog introdu un număr întreg valid.");
+                    Console.WriteLine("Invalid input. Enter a valid int.");
                 }
             }
             while (!isValid);
