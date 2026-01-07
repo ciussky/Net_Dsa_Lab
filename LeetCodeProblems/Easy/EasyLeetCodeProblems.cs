@@ -147,7 +147,7 @@ namespace Net_Dsa_Lab.LeetCodeProblems.Easy
         public static int? SingleNumber(int[] nums)
         {
 
-            //var result = 0;
+            // var result = 0;
 
             //foreach (var item in nums)
             //{
@@ -158,6 +158,38 @@ namespace Net_Dsa_Lab.LeetCodeProblems.Easy
 
             //return result;
 
+            //int result = 0;
+
+            //foreach (var item in nums)
+            //{
+            //    string resultBin = Convert.ToString(result, 2).PadLeft(32, '0');
+            //    string itemBin = Convert.ToString(item, 2).PadLeft(32, '0');
+            //    char[] xorBin = new char[32];
+
+            //    Console.WriteLine($"Result: {result} -> {resultBin}");
+            //    Console.WriteLine($"Item:   {item} -> {itemBin}");
+            //    Console.WriteLine("Bit by bit XOR:");
+
+            //    for (int i = 0; i < 32; i++)
+            //    {
+            //        char a = resultBin[i];
+            //        char b = itemBin[i];
+
+            //        xorBin[i] = (a == b) ? '0' : '1';
+
+            //        Console.WriteLine(
+            //            $"bit {31 - i}: {a} XOR {b} = {xorBin[i]}"
+            //        );
+            //    }
+
+            //    string xorString = new string(xorBin);
+            //    result = Convert.ToInt32(xorString, 2);
+
+            //    Console.WriteLine($"XOR result: {result} -> {xorString}");
+            //    Console.WriteLine(new string('-', 50));
+            //}
+
+            //return result;
 
 
             var counts = new Dictionary<int, int>();
@@ -168,12 +200,16 @@ namespace Net_Dsa_Lab.LeetCodeProblems.Easy
                     counts[num] = 0;
 
                 counts[num]++;
+
+                Console.WriteLine($"{num}: {counts[num]}");
             }
 
             foreach (var kv in counts)
             {
                 if (kv.Value == 1)
+                {
                     return kv.Key;
+                }
             }
 
             return null;

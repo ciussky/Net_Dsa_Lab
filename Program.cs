@@ -122,8 +122,8 @@ class Program
                     break;
                     case"4":
                     nums = Services.GenerateRandomArray(10);
-                    nums = [2, 7, 5, 6, 6, 5, 2, 7];
-                    Console.WriteLine($"Generated array: [{string.Join(", ", nums)}]");
+                    nums = [2, 7, 5, 6, 5, 2, 7];
+                    Console.WriteLine($"Hardcoded array: [{string.Join(", ", nums)}]");
 
                     int? singleNumber = EasyLeetCodeProblems.SingleNumber(nums);
                     if (singleNumber == null)
@@ -132,8 +132,7 @@ class Program
                     }
                     else
                     {
-                        Console.WriteLine($"Single number is {singleNumber}");
-
+                        Console.WriteLine($"The single number is {singleNumber}");
                     }
 
                     Console.ReadLine();
@@ -147,7 +146,6 @@ class Program
             }
             Console.WriteLine();
         }
-
     }
 
     static void ArrayMenu()
