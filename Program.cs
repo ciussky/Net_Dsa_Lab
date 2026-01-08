@@ -122,7 +122,7 @@ class Program
                     break;
                     case"4":
                     nums = Services.GenerateRandomArray(10);
-                    nums = [2, 7, 5, 6, 5, 2, 7];
+                    nums = [2, 5, 2];
                     Console.WriteLine($"Hardcoded array: [{string.Join(", ", nums)}]");
 
                     int? singleNumber = EasyLeetCodeProblems.SingleNumber(nums);

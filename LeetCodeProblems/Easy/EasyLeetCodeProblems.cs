@@ -158,61 +158,67 @@ namespace Net_Dsa_Lab.LeetCodeProblems.Easy
 
             //return result;
 
-            //int result = 0;
+            int result = 0;
 
-            //foreach (var item in nums)
+            foreach (var item in nums)
+            {
+                // Force 8-bit view
+                int r8 = result & 0xFF;
+                int i8 = item & 0xFF;
+
+                string resultBin = Convert.ToString(r8, 2).PadLeft(8, '0');
+                string itemBin = Convert.ToString(i8, 2).PadLeft(8, '0');
+                char[] xorBin = new char[8];
+
+                Console.WriteLine($"Result: {r8} -> {resultBin}");
+                Console.WriteLine($"Item:   {i8} -> {itemBin}");
+                Console.WriteLine("Bit by bit XOR:");
+
+                for (int i = 0; i < 8; i++)
+                {
+                    char a = resultBin[i];
+                    char b = itemBin[i];
+
+                    xorBin[i] = (a == b) ? '0' : '1';
+
+                    Console.WriteLine(
+                        $"bit {7 - i}: {a} XOR {b} = {xorBin[i]}"
+                    );
+                }
+
+                string xorString = new string(xorBin);
+
+                // Convert back to int AND CUT TO 8 BITS
+                result = Convert.ToInt32(xorString, 2) & 0xFF;
+
+                Console.WriteLine($"XOR result: {result} -> {xorString}");
+                Console.WriteLine(new string('-', 40));
+            }
+
+            return result;
+
+
+            //var counts = new Dictionary<int, int>();
+
+            //foreach (int num in nums)
             //{
-            //    string resultBin = Convert.ToString(result, 2).PadLeft(32, '0');
-            //    string itemBin = Convert.ToString(item, 2).PadLeft(32, '0');
-            //    char[] xorBin = new char[32];
+            //    if (!counts.ContainsKey(num))
+            //        counts[num] = 0;
 
-            //    Console.WriteLine($"Result: {result} -> {resultBin}");
-            //    Console.WriteLine($"Item:   {item} -> {itemBin}");
-            //    Console.WriteLine("Bit by bit XOR:");
+            //    counts[num]++;
 
-            //    for (int i = 0; i < 32; i++)
-            //    {
-            //        char a = resultBin[i];
-            //        char b = itemBin[i];
-
-            //        xorBin[i] = (a == b) ? '0' : '1';
-
-            //        Console.WriteLine(
-            //            $"bit {31 - i}: {a} XOR {b} = {xorBin[i]}"
-            //        );
-            //    }
-
-            //    string xorString = new string(xorBin);
-            //    result = Convert.ToInt32(xorString, 2);
-
-            //    Console.WriteLine($"XOR result: {result} -> {xorString}");
-            //    Console.WriteLine(new string('-', 50));
+            //    Console.WriteLine($"{num}: {counts[num]}");
             //}
 
-            //return result;
+            //foreach (var kv in counts)
+            //{
+            //    if (kv.Value == 1)
+            //    {
+            //        return kv.Key;
+            //    }
+            //}
 
-
-            var counts = new Dictionary<int, int>();
-
-            foreach (int num in nums)
-            {
-                if (!counts.ContainsKey(num))
-                    counts[num] = 0;
-
-                counts[num]++;
-
-                Console.WriteLine($"{num}: {counts[num]}");
-            }
-
-            foreach (var kv in counts)
-            {
-                if (kv.Value == 1)
-                {
-                    return kv.Key;
-                }
-            }
-
-            return null;
+            //return null;
 
         }
     }
