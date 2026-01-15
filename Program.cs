@@ -1,12 +1,39 @@
 ﻿using Net_Dsa_Lab;
 using Net_Dsa_Lab.LeetCodeProblems.Easy;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+
 
 class Program
 {
+    
+    //public static string Test()
+    //{
+
+        //List<int> list = new List<int>();
+
+        //list.Add(5);
+        
+    //    Hashtable table = new Hashtable();
+
+    //    table.Add(1, "2");
+
+    //    for (int i = 0; i < 10; i++)
+    //    {
+
+    //        Console.WriteLine($"i = {i}");
+    //        for (int j = i; j < 10; j++)
+    //        {
+    //            Console.WriteLine($"j = {j}");
+    //        }
+    //    }
+    //    return Console.ReadLine();
+    //}
     static void Main()
     {
+
+        //Test();
 
         //MergeAlternately("abc", "pqr");
 
@@ -74,6 +101,8 @@ class Program
             Console.WriteLine("4. SingleNumber(nums) ");
             Console.WriteLine("5. Back");
             Console.Write("Choose an option: ");
+
+            //options
             string opt = Console.ReadLine();
             Console.WriteLine();
             switch (opt)
@@ -172,11 +201,21 @@ class Program
             switch (opt)
             {
                 case "1":
-                    Console.Write("Valoare: ");
-                    arr.Add(int.Parse(Console.ReadLine()));
+                    Console.Clear();
+                    int num;
+                    Console.Write("Value: ");
+                    while (!int.TryParse(Console.ReadLine(), out num))
+                    {
+                        Console.WriteLine("Invalid input. Please enter a whole number.");
+                        Console.Write("Value: ");
+                    }
+                    arr.Add(num);
                     break;
-
                 case "2":
+                    Console.Clear();
+
+                    Console.WriteLine($"There are {arr.Count().ToString()} elements in array.");
+
                     Console.Write("Index: ");
                     int idxInsert = int.Parse(Console.ReadLine());
                     Console.Write("Valoare: ");
@@ -279,6 +318,7 @@ class Program
 
         Console.WriteLine("\n" + new string('—', consoleWidth)); // Linie separatoare
     }
+
 
 
     //public static string MergeAlternately(string word1, string word2)

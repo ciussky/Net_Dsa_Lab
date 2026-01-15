@@ -7,9 +7,9 @@ public class ArrayHandler
     private List<int> items = new List<int>();
 
     public void Add(int value)
-    {
+    {       
         items.Add(value);
-        Console.WriteLine($"Added {value}");
+        Console.WriteLine($"Added {value} to array, array values are [{string.Join(",", items)}]");
     }
 
     public void InsertAt(int index, int value)
