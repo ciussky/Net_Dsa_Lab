@@ -7,28 +7,37 @@ using System.Collections.Generic;
 
 class Program
 {
-    
+
     //public static string Test()
     //{
 
         //List<int> list = new List<int>();
 
         //list.Add(5);
-        
-    //    Hashtable table = new Hashtable();
 
-    //    table.Add(1, "2");
+        //Hashtable table = new Hashtable();
 
-    //    for (int i = 0; i < 10; i++)
-    //    {
+        //table.Add(1, "2");
 
-    //        Console.WriteLine($"i = {i}");
-    //        for (int j = i; j < 10; j++)
-    //        {
-    //            Console.WriteLine($"j = {j}");
-    //        }
-    //    }
-    //    return Console.ReadLine();
+        //for (int i = 0; i < 10; i++)
+        //{
+
+        //    Console.WriteLine($"i = {i}");
+        //    for (int j = i; j < 10; j++)
+        //    {
+        //        Console.WriteLine($"j = {j}");
+        //    }
+        //}
+        //return Console.ReadLine();
+
+        //string x = "";
+
+        //Console.Write("Enter your height:");
+
+        //x = Console.ReadLine();
+        //Console.WriteLine($"Your height is ----> {x}");
+        //return Console.ReadLine();
+
     //}
     static void Main()
     {
@@ -193,7 +202,7 @@ class Program
             Console.WriteLine("4. GetAt");
             Console.WriteLine("5. Print");
             Console.WriteLine("6. Back");
-            Console.Write("Alege: ");
+            Console.Write("Choose: ");
 
             string opt = Console.ReadLine();
             Console.WriteLine();
@@ -216,9 +225,9 @@ class Program
 
                     Console.WriteLine($"There are {arr.Count().ToString()} elements in array.");
 
-                    Console.Write("Index: ");
+                    Console.Write("Set index: ");
                     int idxInsert = int.Parse(Console.ReadLine());
-                    Console.Write("Valoare: ");
+                    Console.Write("Set value: ");
                     int valInsert = int.Parse(Console.ReadLine());
                     arr.InsertAt(idxInsert, valInsert);
                     break;

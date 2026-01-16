@@ -22,6 +22,9 @@ public class ArrayHandler
 
         items.Insert(index, value);
         Console.WriteLine($"Inserted {value} at index {index}");
+
+        Console.WriteLine($"Updated array is: [{string.Join(",", items)}]");
+
     }
 
     public void RemoveAt(int index)
