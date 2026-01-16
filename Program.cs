@@ -233,6 +233,8 @@ class Program
                     break;
 
                 case "3":
+                    Console.Clear();
+                    Console.WriteLine($"Updated array is: [{arr.ArrItems()}]");
                     Console.Write("Index: ");
                     arr.RemoveAt(int.Parse(Console.ReadLine()));
                     break;

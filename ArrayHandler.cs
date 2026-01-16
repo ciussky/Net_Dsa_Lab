@@ -14,7 +14,7 @@ public class ArrayHandler
 
     public void InsertAt(int index, int value)
     {
-        if (index < 0 || index > items.Count)
+        if (index < 0 || index > items.Count - 1)
         {
             Console.WriteLine("Index invalid.");
             return;
@@ -29,14 +29,16 @@ public class ArrayHandler
 
     public void RemoveAt(int index)
     {
-        if (index < 0 || index >= items.Count)
+        if (index < 0 || index > items.Count - 1)
         {
             Console.WriteLine("Index invalid.");
             return;
         }
 
-        Console.WriteLine($"Removed {items[index]}");
         items.RemoveAt(index);
+
+        //Console.WriteLine($"Removed {items[index]}");
+        Console.WriteLine($"Updated array is: [{string.Join(",", items)}]");
     }
 
     public void GetAt(int index)
@@ -58,5 +60,10 @@ public class ArrayHandler
     public int Count()
     {
         return items.Count;
+    }
+
+    public string ArrItems()
+    {
+        return string.Join(", ", items);
     }
 }
