@@ -9,22 +9,28 @@ public class ArrayHandler
     public void Add(int value)
     {       
         items.Add(value);
-        Console.WriteLine($"Added {value} to array, array values are [{string.Join(",", items)}]");
+        Console.WriteLine($"Added {value} to array");
+        Print();
     }
 
     public void InsertAt(int index, int value)
     {
-        if (index < 0 || index > items.Count - 1)
+        if (index < 0 || index > items.Count)
         {
             Console.WriteLine("Index invalid.");
             return;
         }
 
-        items.Insert(index, value);
-        Console.WriteLine($"Inserted {value} at index {index}");
-
-        Console.WriteLine($"Updated array is: [{string.Join(",", items)}]");
-
+        if (items.Count == 0 && index == 0)
+        {
+            Add(value);
+        }
+        else
+        {
+            items.Insert(index, value);
+            Console.WriteLine($"Inserted {value} at index {index}");
+            Print();
+        }
     }
 
     public void RemoveAt(int index)
@@ -36,14 +42,12 @@ public class ArrayHandler
         }
 
         items.RemoveAt(index);
-
-        //Console.WriteLine($"Removed {items[index]}");
-        Console.WriteLine($"Updated array is: [{string.Join(",", items)}]");
+        Print();
     }
 
     public void GetAt(int index)
     {
-        if (index < 0 || index >= items.Count)
+        if (index < 0 || index > items.Count - 1)
         {
             Console.WriteLine("Index invalid.");
             return;
@@ -54,7 +58,7 @@ public class ArrayHandler
 
     public void Print()
     {
-        Console.WriteLine("Array: " + string.Join(", ", items));
+        Console.WriteLine($"Current Array: [{string.Join(", ", items)}]");
     }
 
     public int Count()

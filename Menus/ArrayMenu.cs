@@ -43,31 +43,34 @@ namespace Net_Dsa_Lab.Menus
                         }
                         arr.Add(num);
                         Console.ReadLine();
-
                         break;
                     case "2":
-                        Console.WriteLine($"There are {arr.Count().ToString()} elements in array.");
-
+                        arr.Print();
                         Console.Write("Set index: ");
                         int idxInsert = int.Parse(Console.ReadLine());
                         Console.Write("Set value: ");
                         int valInsert = int.Parse(Console.ReadLine());
                         arr.InsertAt(idxInsert, valInsert);
+                        Console.ReadLine();
                         break;
 
                     case "3":
-                        Console.WriteLine($"Updated array is: [{arr.ArrItems()}]");
+                        arr.Print();
                         Console.Write("Index: ");
                         arr.RemoveAt(int.Parse(Console.ReadLine()));
+                        Console.ReadLine();
                         break;
 
                     case "4":
+                        arr.Print();               
                         Console.Write("Index: ");
                         arr.GetAt(int.Parse(Console.ReadLine()));
+                        Console.ReadLine();
                         break;
 
                     case "5":
                         arr.Print();
+                        Console.ReadLine();
                         break;
 
                     case "6":
